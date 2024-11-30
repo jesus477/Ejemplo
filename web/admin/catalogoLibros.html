@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Listado de Libros</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style/styleLibros.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+    <body>
+        <div class="perfil-usuario-header"> 
+            <div class="perfil-usuario-portada">
+                <a href="../index.html">
+                    <button class="button" title="Regresar al inicio">
+                        <div class="button-box">
+                            <span class="button-elem">
+                                <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+                                    ></path>
+                                </svg>
+                            </span>
+                            <span class="button-elem">
+                                <svg viewBox="0 0 46 40">
+                                <path
+                                    d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+                                    ></path>
+                                </svg>
+                            </span>
+                        </div>
+                    </button>
+                </a>
+                <div class="perfil-usuario-avatar">
+                    <img src="../img/logoUniversidadCatalogo.png" alt="Logo del Libro"/>
+                </div>
+            </div>
+        </div>
+
+        <h2>Listado de Libros</h2>
+
+        <div>
+            <form id="bookForm">
+                <input type="hidden" id="id" name="id"> <!-- Campo oculto para el ID -->
+
+                <div class="input__container input__container--variant">
+                    <div class="shadow__input shadow__input--variant"></div>
+                    <input type="text" id="nombreLibros" name="nombreLibros" class="input__search input__search--variant" placeholder="Nombre del libro" required>
+                </div>
+                <br>
+                <div class="input__container input__container--variant">
+                    <div class="shadow__input shadow__input--variant"></div>
+                    <input type="text" id="autor" name="autor" class="input__search input__search--variant" placeholder="Autor" required>
+                </div>
+                <br>
+                <div class="input__container input__container--variant">
+                    <div class="shadow__input shadow__input--variant"></div>
+                    <input type="text" id="universidad" name="universidad" class="input__search input__search--variant" placeholder="Universidad" required>
+                </div>
+                <br>
+                <div class="input__container input__container--variant">
+                    <div class="shadow__input shadow__input--variant"></div>
+                    <input type="text" id="genero" name="genero" class="input__search input__search--variant" placeholder="Género" required>
+                </div>
+                <br>
+                <div class="input__container input__container--variant">
+                    <label for="estatus"></label>
+                    <div class="custom-select">
+                        <select id="estatus" name="estatus" required>
+                            <option value="" disabled selected>Seleccione su estatus</option>
+                            <option value="Existente">Existente</option>
+                            <option value="Sin recursos">Sin recursos</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <br>
+                <div class="input__container input__container--variant">
+                    <label for="pdf"></label>
+                    <div class="file-upload">
+                        <input type="file" id="pdf" name="pdf" accept=".pdf" required>
+                        <label for="pdf" class="file-upload-label">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="upload-icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                            </svg>
+                            <span class="upload-text">Suba el libro en PDF</span>
+                        </label>
+                    </div>
+                </div>
+                <br>
+                <div class="button-container">
+                    <button type="submit" onclick="saveLibro(); return false;">Guardar</button>
+                    <button type="button" onclick="updateLibro();">Actualizar</button> <!-- Botón de actualización -->
+                </div>
+            </form>
+        </div>
+
+        <table id="tablaUsuarios">
+            <thead>
+                <tr>
+                    <th>Nombre del Libro</th>
+                    <th>Autor</th>
+                    <th>Universidad</th>
+                    <th>Género</th>
+                    <th>Estatus</th>
+                    <th>PDF</th>
+                    <th>Actualizar</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <script src="../js/libros.js"></script>
+    </body>
+</html>

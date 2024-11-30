@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Proyecto AS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style/style.css" />
+    </head>
+    <body>
+        <main>
+            <div class="box">
+                <div class="inner-box">
+                    <div class="forms-wrap">
+                        <form action="index.html" autocomplete="off" class="sign-in-form">
+                            <div class="logo">
+                                <img src="./img/logoUniversidad.png" alt="" />
+                                <h4>Biblioteca Universidad Nova</h4>
+                            </div>
+
+                            <div class="heading">
+                                <h2>Bienvenido</h2>
+                                <h3>Iniciar Sesi&oacute;n</h3>
+                            </div>
+                                <div class="input-wrap">
+                                    <input
+                                        id="txtUsuario"
+                                        type="text"
+                                        class="input-field"
+                                        autocomplete="off"
+                                        required
+                                        />
+                                    <label>Usuario</label>
+                                </div>
+                                <div class="input-wrap">
+                                    <input
+                                        id="txtContrasenia"
+                                        type="password"
+                                        class="input-field"
+                                        autocomplete="off"
+                                        required
+                                        />
+                                    <label>Contraseña</label>
+                                </div>
+                             <div class="actual-form">
+                                <div class="input-wrap">
+                                    <input
+                                        id="txtPerfil"
+                                        type="text"
+                                        class="input-field"
+                                        autocomplete="off"
+                                        required
+                                        />
+                                    <label>Perfil</label>
+                                </div>
+
+                                <button type="button" onclick="login()" class="sign-btn">Iniciar sesión</button>
+                            </div>
+                        </form>  
+                    </div>
+
+                    <div class="carousel">
+                        <div class="images-wrapper">
+                            <img src="./img/carruselLibro1.png" class="image img-1 show" alt="" />
+                            <img src="./img/carruselLibro2.png" class="image img-2" alt="" />
+                            <img src="./img/carruselLibro3.png" class="image img-3" alt="" />
+                        </div>
+
+                        <div class="text-slider">
+                            <div class="text-wrap">
+                                <div class="text-group">
+
+                                </div>
+                            </div>
+
+                            <div class="bullets">
+                                <span class="active" data-value="1"></span>
+                                <span data-value="2"></span>
+                                <span data-value="3"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Javascript -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="js/main.js"></script>
+        <script>
+///Carrusel y registro
+                                    const inputs = document.querySelectorAll(".input-field");
+                                    const toggle_btn = document.querySelectorAll(".toggle");
+                                    const main = document.querySelector("main");
+                                    const bullets = document.querySelectorAll(".bullets span");
+                                    const images = document.querySelectorAll(".image");
+
+                                    inputs.forEach((inp) => {
+                                        inp.addEventListener("focus", () => {
+                                            inp.classList.add("active");
+                                        });
+                                        inp.addEventListener("blur", () => {
+                                            if (inp.value != "")
+                                                return;
+                                            inp.classList.remove("active");
+                                        });
+                                    });
+
+                                    toggle_btn.forEach((btn) => {
+                                        btn.addEventListener("click", () => {
+                                            main.classList.toggle("sign-up-mode");
+                                        });
+                                    });
+
+                                    function moveSlider() {
+                                        let index = this.dataset.value;
+
+                                        let currentImage = document.querySelector(`.img-${index}`);
+                                        images.forEach((img) => img.classList.remove("show"));
+                                        currentImage.classList.add("show");
+
+                                        const textSlider = document.querySelector(".text-group");
+                                        textSlider.style.transform = `translateY(${-(index - 1) * 2.2}rem)`;
+
+                                        bullets.forEach((bull) => bull.classList.remove("active"));
+                                        this.classList.add("active");
+                                    }
+
+                                    bullets.forEach((bullet) => {
+                                        bullet.addEventListener("click", moveSlider);
+                                    });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,325 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.perfil-usuario-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.perfil-usuario-portada {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #5A7D9A;
+    color: white;
+    padding: 20px;
+}
+
+.perfil-usuario-avatar {
+    margin-bottom: 10px;
+}
+
+.perfil-usuario-avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.boton-avatar {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-top: 5px;
+    color: #3A5F0B;
+    transition: background-color 0.3s;
+}
+
+.boton-avatar:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    color: #5A7D9A;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #5A7D9A;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+button {
+    background-color: #5A7D9A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin: 20px 5px 20px 0;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #080736;
+}
+
+.regresar {
+    display: inline-block;
+    text-align: center;
+    color: #585690;
+    text-decoration: none;
+}
+
+orm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 1 1 45%; /* Asegura que todos los campos ocupen la mitad del ancho */
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Ajustes del contenedor de búsqueda */
+.input__container--variant {
+  background: linear-gradient(to bottom, #ffffff, #ffffff);
+  border-radius: 1.5em;
+  max-width: 100%; /* Para que ocupe el ancho completo */
+  padding: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  box-shadow: 0em 1em 3em #ffffff;
+}
+
+/* Campo de búsqueda más grande */
+.input__search--variant {
+  flex: 1;
+  align-items: center;
+  border-radius: 13em;
+  outline: none;
+  border: none;
+  padding: 0.8em 1em;
+  font-size: 1.2em;
+  color: #002019;
+  background-color: transparent;
+}
+
+/* Color de botón igual a la tabla */
+.input__button__shadow--variant {
+  border-radius: 15px;
+  background-color: #5A7D9A; /* Igual que el encabezado de la tabla */
+  padding: 10px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input__button__shadow--variant:hover {
+  background-color: #5A7D9A;
+}
+
+/* From Uiverse.io by xopc333 */ 
+.button {
+  display: block;
+  position: relative;
+  width: 56px;
+  height: 56px;
+  margin: 0;
+  overflow: hidden;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+}
+
+.button:before,
+.button:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 7px;
+}
+
+.button:before {
+  border: 4px solid #f0eeef;
+  transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+.button:after {
+  border: 4px solid #f0eeef;
+  transform: scale(1.3);
+  transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0;
+}
+
+.button:hover:before,
+.button:focus:before {
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.button:hover:after,
+.button:focus:after {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+
+/* Cambiar el color del hover */
+.button:hover,
+.button:focus {
+  background-color: #5A7D9A; /* Cambia este color por el de tu tabla */
+}
+
+.button-box {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.button-elem {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 17px 18px 0 18px;
+  transform: rotate(180deg);
+  fill: #f0eeef;
+}
+
+.button:hover .button-box,
+.button:focus .button-box {
+  transition: 0.4s;
+  transform: translateX(-56px);
+}
+
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+    width: 100%; 
+    border-radius: 1.5em; 
+    overflow: hidden;
+    background: white; 
+    box-shadow: 0em 1em 3em #ffffff;
+}
+
+.custom-select select {
+  font-size: 1.2em;
+  width: 100%;
+  padding: 0.8em 1em;
+  border: none;
+  background: white;
+  border-radius: 1.5em;
+  appearance: none;
+  cursor: pointer;
+}
+
+.custom-select::after {
+    content: '▼'; 
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #002019; 
+}
+
+
+.custom-select select option {
+    background: white; 
+    color: #002019; 
+}
+
+.input__container {
+    display: flex;
+    gap: 0.5em;
+}
+
+.file-upload {
+    position: relative;
+}
+
+input[type="file"] {
+    display: none; /* Ocultar el input de archivo original */
+}
+
+.file-upload-label {
+    display: flex;
+    padding: 1em;
+    background-color: #ffffff;
+    border: 2px dashed #585690;
+    border-radius: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.file-upload-label:hover {
+    background-color: #f0f0f0;
+}
+
+.upload-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5em;
+    color: #585690;
+}
+
+.upload-text {
+    font-size: 1em;
+    color: #002019; 
+}
+
+
+
+
